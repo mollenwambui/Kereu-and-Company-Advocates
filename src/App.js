@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Scale, Building2, Briefcase, Home, Users, FileText, Phone, Mail, MapPin, ArrowRight, Menu, X } from 'lucide-react';
+import { Scale, Building2, Briefcase, Home, Users, FileText, Phone, Mail, MapPin, ArrowRight, Menu, X, Gavel, Shield } from 'lucide-react';
 import './App.css';
 
 function App() {
@@ -53,9 +53,10 @@ function App() {
   }, []);
 
   const services = [
-    { icon: Building2, title: "Corporate Law", desc: "Company formation, mergers, acquisitions, and corporate governance solutions." },
+    { icon: Building2, title: "Corporate & Commercial Law", desc: "Company formation, mergers, acquisitions, commercial transactions, contracts, and corporate governance solutions." },
     { icon: Scale, title: "Civil Litigation", desc: "Expert representation in civil disputes and litigation matters before Kenyan courts." },
-    { icon: Briefcase, title: "Commercial Law", desc: "Commercial transactions, contracts, and business dispute resolution." },
+    { icon: Gavel, title: "Constitutional Law", desc: "Protection of constitutional rights, fundamental freedoms, and interpretation of constitutional provisions." },
+    { icon: Shield, title: "Judicial Review", desc: "Challenging decisions of public bodies, administrative law, and public law litigation." },
     { icon: Home, title: "Property & Conveyancing", desc: "Land transactions, property transfers, and real estate legal services." },
     { icon: Users, title: "Family Law", desc: "Matrimonial matters, divorce, custody, succession, and family dispute resolution." },
     { icon: FileText, title: "Employment Law", desc: "Employment contracts, workplace disputes, and labor law compliance." }
@@ -183,7 +184,7 @@ function App() {
           <h2 className="section-title white">About Kereu & Company Advocates</h2>
           <div className="about-content">
             <p className="about-text">
-              Kereu & Company Advocates is a leading law firm based in Thika,  dedicated to providing exceptional legal services to individuals and businesses throughout Kenya.
+              Kereu & Company Advocates is a leading law firm based in Thika, dedicated to providing exceptional legal services to individuals and businesses throughout Kenya.
             </p>
             <p className="about-text">
               With a proven track record of over 100 successfully handled cases, we combine legal expertise with a client-centered approach. Our commitment is to deliver practical, effective legal solutions tailored to each client's unique needs.
@@ -205,7 +206,7 @@ function App() {
                 <Phone size={40} />
               </div>
               <h3 className="contact-title">Phone</h3>
-              <a href="tel:0791018377" className="contact-link">0791 018 377</a>
+              <a href="tel:0791018377" className="contact-link">+254 791 018 377</a>
             </div>
             <div className="contact-card">
               <div className="contact-icon-box">

@@ -1,4 +1,66 @@
 /* Smooth anchor scrolling, and keep section titles clear of the sticky navbar */
+/* ===== Stop sideways scrolling ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip; /* clip, not hidden, so the sticky navbar keeps working */
+}
+
+.app-container {
+  width: 100%;
+  overflow-x: clip;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* ===== WhatsApp button fits on mobile ===== */
+a[href*="wa.me"],
+a[href*="whatsapp"],
+button[class*="whatsapp" i] {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+}
+
+@media (max-width: 520px) {
+  /* inline/full-width WhatsApp button */
+  a[href*="wa.me"],
+  a[href*="whatsapp"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* floating WhatsApp button, if it's position: fixed */
+  a[href*="wa.me"][style*="fixed"],
+  a[class*="float" i][href*="wa.me"],
+  a[class*="float" i][href*="whatsapp"] {
+    width: auto;
+    right: 16px;
+    bottom: 16px;
+    max-width: calc(100vw - 32px);
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
 html {
   scroll-behavior: smooth;
 }

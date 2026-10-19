@@ -25,16 +25,16 @@ function App() {
       const duration = 2000;
       const steps = 60;
       const casesIncrement = 100 / steps;
-      const successIncrement = 95 / steps;
+      const successIncrement = 99 / steps;
       const clientsIncrement = 100 / steps;
 
       let step = 0;
       const interval = setInterval(() => {
         step++;
         setCounters({
-          cases: Math.min(Math.round(casesIncrement * step), 100),
-          success: Math.min(Math.round(successIncrement * step), 95),
-          clients: Math.min(Math.round(clientsIncrement * step), 100)
+          cases: Math.min(Math.round(casesIncrement * step), 20),
+          success: Math.min(Math.round(successIncrement * step), 99),
+          clients: Math.min(Math.round(clientsIncrement * step), 99)
         });
 
         if (step >= steps) clearInterval(interval);
@@ -147,9 +147,9 @@ function App() {
           </div>
           <div className="stat-card">
             <div className="stat-value-box">
-              <div className="stat-value">{counters.clients}+</div>
+              <div className="stat-value">{counters.clients}%</div>
             </div>
-            <p className="stat-label">Satisfied Clients</p>
+            <p className="stat-label">Satisfaction Rate</p>
           </div>
         </div>
       </section>

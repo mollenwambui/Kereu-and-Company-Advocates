@@ -6,7 +6,7 @@ import './Contact.css';
 const PHONE_DISPLAY = '+254 791 018 377';
 const PHONE_TEL = '+254791018377';
 const WHATSAPP = '254791018377';
-const EMAIL = 'wakilikereu@gmail.com';
+const EMAIL = 'wakilikereu@gmail.com / litigation.kereu@gmail.com';
 const ADDRESS = 'Protoco Place, 1st Floor, Thika';
 const MAP_QUERY = 'Protoco Place, Thika, Kenya';
 const HOURS = 'Mon – Fri, 8:00 am – 5:00 pm'; // Hidden while empty.

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Building2, Scale, Gavel, Shield, Home, Users, FileText,
   MessageCircle, Phone, ArrowLeft, Check, RotateCcw
@@ -37,6 +37,17 @@ export default function LegalMatcher() {
   const [urgency, setUrgency] = useState(null);
   const [name, setName] = useState('');
 
+  const sectionRef = useRef(null);
+  const firstRender = useRef(true);
+
+  // Bring the whole section back into view on every step change (fixes mobile scroll clamping under navbar)
+  useEffect(() => {
+    if (firstRender.current) { firstRender.current = false; return; }
+    requestAnimationFrame(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [step]);
+
   const chosen = AREAS.find(a => a.id === area);
   const when = URGENCY.find(u => u.id === urgency);
 
@@ -49,7 +60,7 @@ export default function LegalMatcher() {
   const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
 
   return (
-    <section id="matcher" className="lm-section">
+    <section id="matcher" className="lm-section" ref={sectionRef}>
       <div className="lm-wrap">
         <p className="lm-eyebrow">Client guide</p>
         <h2 className="lm-title">Not sure where to start?</h2>
